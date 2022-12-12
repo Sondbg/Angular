@@ -16,10 +16,15 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
 createCompany(info:any):Observable<Company>{
-  let httpHeaders= new HttpHeaders().set('Post-Type','Create Customer');
+  // let httpHeaders= new HttpHeaders().set("Content-Type",'')
+
   
- return this.httpClient.post<Company>(apiURL,info,{headers:httpHeaders});
+ return this.httpClient.post<Company>(apiURL,info);
   
+}
+
+getItems(){
+  return this.httpClient.get<any>(apiURL)
 }
 
   

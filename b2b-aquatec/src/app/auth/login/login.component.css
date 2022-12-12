@@ -82,19 +82,7 @@ label{
         button:hover, .btn-item:hover {
         background: #b6400541;
         }
-        @media (min-width: 568px) {
-        html, body {
-        height: 50%;
-        }
-        .main-block {
-        flex-direction: row;
-        height: calc(100% - 50px);
-        }
-        .left-part, form {
-        flex: 1;
-        height: auto;
-        }
-        }
+
 
         .star{
             color:red;
