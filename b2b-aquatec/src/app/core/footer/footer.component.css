@@ -1,0 +1,43 @@
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    padding-left: 15px;
+    padding-right:15px
+}
+
+footer{
+    color:gray;
+    position: relative;
+    font-size: 12px;
+    display: block;
+}
+
+footer .footer-widgets{
+    padding: 40px 0 10px;
+   vertical-align: top;
+}
+.row{
+    
+    text-align: center;
+}
+.left-col{
+    display: inline-block;
+    width:20%;
+    vertical-align: top;
+  
+}
+ul{
+    text-align: center;
+}
+li{
+    display: inline-block;
+    margin:0 15px 15px 0;
+}
+.follow-us-title{
+    font-size: large;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}

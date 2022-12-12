@@ -51,7 +51,7 @@ padding:25px 40px
         border: none;
         }
         option {
-        background: black; 
+        background: rgba(0, 0, 0, 0.121); 
         border: none;
         }
         .btn-item, button {
