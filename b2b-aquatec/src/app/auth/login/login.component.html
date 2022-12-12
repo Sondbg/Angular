@@ -3,18 +3,18 @@
     
     <!-- LOGIN FORM-->
     <ng-container *ngIf="showLogin">
-    <form action="/">
+    <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
         <div class="title">
           <i class="fas fa-pencil-alt"></i> 
           <h2>ВХОД</h2>
         </div>
         <div class="info">
             <label for="email">Email<sup class="star">&#x2605;</sup></label>
-          <input type="text" name="email" placeholder="Email" required>
+          <input type="text" name="email" placeholder="Email" required ngModel>
           <label for="password">Парола<sup class="star">&#x2605;</sup></label>
-          <input type="password" name="password" placeholder="Парола" required>
+          <input type="password" name="password" placeholder="Парола" required ngModel>
           <label for="repass">Повтори паролата<sup class="star">&#x2605;</sup></label>
-          <input type="password" name="repass" placeholder="Повтори Парола" required>
+          <input type="password" name="repass" placeholder="Повтори Парола" required ngModel>
         </div>
     
         <button type="submit" href="/">Вход</button>
@@ -23,29 +23,29 @@
 
     <!-- Register FORM-->
     <ng-container *ngIf="!showLogin">
-        <form action="/">
+        <form #registerForm="ngForm" (ngSubmit)="registerCompany(registerForm)">
             <div class="title">
               <i class="fas fa-pencil-alt"></i> 
               <h2>Регистрация</h2>
             </div>
             <div class="info">
               <label for="email">ДДС Номер<sup class="star">&#x2605;</sup></label>
-              <input class="fname" type="text" name="company" placeholder="ДДС Номер" required>
+              <input class="fname" type="text" name="company" placeholder="ДДС Номер" required ngModel>
     
               <label for="email">Email<sup class="star">&#x2605;</sup></label>
-              <input type="text" name="email" placeholder="Email" required>
+              <input type="text" name="email" placeholder="Email" required ngModel>
               
               <label for="email">Тел. Номер<sup class="star">&#x2605;</sup></label>
-              <input type="text" name="phone" placeholder="Тел. Номер" required> 
+              <input type="text" name="phone" placeholder="Тел. Номер" required ngModel> 
     
               <label for="email">Парола<sup class="star">&#x2605;</sup></label>
-              <input type="password" name="password" placeholder="Парола" required>
+              <input type="password" name="password" placeholder="Парола" required ngModel>
     
               <label for="email">Повторете паролата<sup class="star">&#x2605;</sup></label>
-              <input type="password" name="repass" placeholder="Парола" required>
-              <select required>
-                <option value="withVAT" selected>Регистрирани по ДДС</option>
-                <option value="withoutVAT">Без регистрация по ДДС</option>
+              <input type="password" name="repass" placeholder="Парола" required ngModel>
+              <select name="vat" ngModel required>
+                <option value="withVAT" name="withVAT">Регистрирани по ДДС</option>
+                <option value="withoutVAT" name="withoutVAT">Без регистрация по ДДС</option>
         
               </select>
             </div>

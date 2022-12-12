@@ -17,8 +17,12 @@ h2{
        margin-top: 20px;
 margin-left:40px;
 margin-right:40px;
-padding:25px 40px
+padding:15px 40px;
+text-align: center;
         }
+label{
+    text-align: left;
+}
     .register{
         border-left: 1px solid gray ;
         text-align: center;
@@ -64,16 +68,19 @@ padding:25px 40px
         font-size: 15px;
         font-weight: 400;
         color: #fff;
+        border-radius:28px;
+        width:25%;
         }
+ 
         .btn-item {
         display: inline-block;
         margin: 20px 5px 0;
         }
         button {
-        width: 100%;
+        width: 50%;
         }
         button:hover, .btn-item:hover {
-        background: #85d7de41;
+        background: #b6400541;
         }
         @media (min-width: 568px) {
         html, body {

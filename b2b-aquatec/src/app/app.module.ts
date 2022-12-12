@@ -4,6 +4,8 @@ import { CoreModule } from './core/core.module'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms'
 
 
 @NgModule({
@@ -14,11 +16,15 @@ import { LoginComponent } from './auth/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule,
+    FormsModule
   ],
   exports:[
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ }

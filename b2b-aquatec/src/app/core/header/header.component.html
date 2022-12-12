@@ -18,11 +18,23 @@
 </nav>
 <img src="../../../assets/stationaryJPG/green-call-icon-32x32.png">
    <strong>+359 885 111 503</strong>
+<ng-container *ngIf="!user; else noUser">
+    <a [routerLink]="'auth/login'" title="Моят профил">
 
-   <a [routerLink]="'auth/login'" title="Моят профил">
+        <span>
+          <strong>  Влез / Регистрирай се	</strong>		</span>
+    </a>
 
-    <span>
-      <strong>  Влез / Регистрирай се	</strong>		</span>
-</a>
+</ng-container>
+<ng-template #noUser>
+
+    <!-- <a [routerLink]="'auth/login'" title="Моят профил"> -->
+
+        <span>
+          <strong>  Добре дошли ИМЕ	</strong>		</span>
+    <!-- </a> -->
+</ng-template>
+
+
     </header>
 

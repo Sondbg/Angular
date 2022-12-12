@@ -8,13 +8,14 @@
 
 footer{
     color:gray;
-    position: relative;
+    position:fixed;
+    bottom:0;
     font-size: 12px;
-    display: block;
+width:100%;
 }
 
 footer .footer-widgets{
-    padding: 40px 0 10px;
+    padding: 20px 0 10px;
    vertical-align: top;
 }
 .row{

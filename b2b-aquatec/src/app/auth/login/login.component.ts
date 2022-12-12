@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,4 +14,12 @@ showLogin=true;
 
 this.showLogin=!this.showLogin;
   }
+
+  registerCompany(form: NgForm){
+console.log(Object.entries(form.value))
+  }
+
+  loginSubmit(form: NgForm){
+    console.log(form.value)
+      }
 }
