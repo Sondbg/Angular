@@ -3,15 +3,20 @@
     margin-right: auto;
     background-color: black;
     padding-left: 15px;
-    padding-right:15px
+    padding-right:15px;
+    position:relative
 }
 
 footer{
     color:gray;
+    background-color: black;
     position:fixed;
+    height:100px;
     bottom:0;
+
     font-size: 12px;
 width:100%;
+
 }
 
 footer .footer-widgets{

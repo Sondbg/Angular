@@ -18,14 +18,14 @@ this.showLogin=!this.showLogin;
   }
 
   registerCompany(form: NgForm){
-console.log(form.value)
+if(form.invalid){return}
 
 let companyInfo={
   company: form.value.company,
   email:form.value.email,
   phone:form.value.phone,
   password:form.value.password,
-  vatReg:form.value.vat
+  address:form.value.address
 }
 this.apiService.createCompany(companyInfo).subscribe((value)=>{
   console.log(value)
@@ -33,6 +33,7 @@ this.apiService.createCompany(companyInfo).subscribe((value)=>{
   }
 
   loginSubmit(form: NgForm){
+    if(form.invalid){return}
     console.log(form.value)
     this.apiService.getItems().subscribe((value)=>{
       console.log(value)

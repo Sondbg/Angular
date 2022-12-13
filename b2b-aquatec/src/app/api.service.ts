@@ -15,17 +15,28 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) {}
 
-createCompany(info:any):Observable<Company>{
-  // let httpHeaders= new HttpHeaders().set("Content-Type",'')
+createCompany(info:any):Observable<any>{
+let payload=createPayload('createCustomer',info)
 
   
- return this.httpClient.post<Company>(apiURL,info);
+ return this.httpClient.post<any>(apiURL,payload);
   
 }
 
 getItems(){
-  return this.httpClient.get<any>(apiURL)
+
+
+  return this.httpClient.get(apiURL)
 }
 
-  
+
 }
+
+function createPayload(method:string,data:any){
+
+  return JSON.stringify({method:method,
+  data: data
+  })
+  }
+
+
