@@ -4,33 +4,51 @@
     <!-- LOGIN FORM-->
     <ng-container *ngIf="showLogin">
     <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
+      <div class="form-group">
         <div class="title">
           <i class="fas fa-pencil-alt"></i> 
           <h2>ВХОД</h2>
         </div>
         <div class="info">
             <label for="email">Email<sup class="star">&#x2605;</sup></label>
-          <input type="text" name="email" placeholder="Email" required ngModel>
+          <input #emailInput="ngModel" type="email" name="email" placeholder="login.email@gmail.com" required ngModel email>
+          <ng-container *ngIf="emailInput.touched">
+            <p *ngIf="emailInput.errors?.['required']">Email is required</p>
+            <p *ngIf="emailInput.errors?.['email']">Email is invalid</p>
+          </ng-container>
+
           <label for="password">Парола<sup class="star">&#x2605;</sup></label>
-          <input type="password" name="password" placeholder="Парола" required ngModel>
-          <label for="repass">Повтори паролата<sup class="star">&#x2605;</sup></label>
-          <input type="password" name="repass" placeholder="Повтори Парола" required ngModel>
+          <input #passwordInput="ngModel" type="password" name="password" placeholder="Password" required ngModel [minlength]="8">
+          <ng-container *ngIf="passwordInput.touched">
+            <p *ngIf="passwordInput.errors?.['required']">Password is required</p>
+            <p *ngIf="passwordInput.errors?.['minlength']">Password must be at least 8 characters long.</p>
+          </ng-container>
+
         </div>
     
-        <button type="submit" href="/api/login">Вход</button>
+        <button type="submit" href="/api/login" [disabled]="!loginForm.valid">Вход</button>
+      </div>
       </form>
+      
     </ng-container>
 
     <!-- Register FORM-->
     <ng-container *ngIf="!showLogin">
         <form #registerForm="ngForm" (ngSubmit)="registerCompany(registerForm)">
+          <div class="form-group">
             <div class="title">
               <i class="fas fa-pencil-alt"></i> 
               <h2>Регистрация</h2>
             </div>
             <div class="info">
-              <label for="email">ДДС Номер<sup class="star">&#x2605;</sup></label>
-              <input class="fname" type="text" name="company" placeholder="ДДС Номер" required ngModel>
+              <label for="company">ДДС Номер<sup class="star">&#x2605;</sup></label>
+              <input appVat #VatInput="ngModel" class="fname" type="text" name="company" placeholder="BG123456789" ngModel  >
+              <ng-container *ngIf="VatInput.touched">
+                <p *ngIf="VatInput.errors?.['required']">Vat Number is required</p>
+                
+                {{VatInput.errors | json}}
+                <p *ngIf="VatInput.errors?.['vatNum']">Not a valid VAT Number</p>
+              </ng-container>
     
               <label for="email">Email<sup class="star">&#x2605;</sup></label>
               <input type="text" name="email" placeholder="Email" required ngModel>
@@ -50,7 +68,8 @@
 
             </div>
         
-            <button type="submit" href="/api/register">Регистрация</button>
+            <button type="submit" href="/api/register" [disabled]="!registerForm.valid">Регистрация</button>
+          </div>
           </form>
 
     </ng-container>
