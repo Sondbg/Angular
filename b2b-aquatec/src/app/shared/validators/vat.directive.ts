@@ -2,7 +2,7 @@ import { Directive} from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
 
 @Directive({
-  selector: '[appVAT]',
+  selector: '[appVatValidator]',
   providers:[
     {
       provide: NG_VALIDATORS,

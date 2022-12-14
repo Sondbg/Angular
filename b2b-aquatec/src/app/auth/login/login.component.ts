@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 
@@ -7,9 +7,12 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   constructor(private apiService:ApiService){}
 
+  ngOnInit(){}
+
+  
 showLogin=true;
   swapForms(event:any){
     event.preventDefault();
