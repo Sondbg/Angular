@@ -42,7 +42,7 @@
             </div>
             <div class="info">
               <label for="company">ДДС Номер<sup class="star">&#x2605;</sup></label>
-              <input appVat #VatInput="ngModel" class="fname" type="text" name="company" placeholder="BG123456789" ngModel  >
+              <input  appVatValidator #VatInput="ngModel" class="fname" type="text" name="company" placeholder="BG123456789" ngModel  >
               <ng-container *ngIf="VatInput.touched">
                 <p *ngIf="VatInput.errors?.['required']">Vat Number is required</p>
                 

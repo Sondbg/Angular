@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VATDirective } from './validators/vat.directive';
-import { FormsModule } from '@angular/forms';
-
 
 
 
@@ -12,7 +10,6 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
   ],
   exports:[
     VATDirective
