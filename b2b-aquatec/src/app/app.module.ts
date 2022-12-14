@@ -8,7 +8,6 @@ import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-// import { VATDirective } from './vat-validator.directive';
 
 
 
@@ -17,15 +16,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   declarations: [
     AppComponent,
     LoginComponent,
-    // VATDirective,
+   
   ],
   imports: [
     BrowserModule, 
     CoreModule,
     SharedModule,
     FormsModule,
-    //  ReactiveFormsModule,
-    AppRoutingModule,
+     AppRoutingModule,
     HttpClientModule,
 
 
