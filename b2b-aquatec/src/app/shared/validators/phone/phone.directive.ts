@@ -2,32 +2,28 @@ import { Directive} from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
 
 @Directive({
-  selector: '[appVatValidator]',
+  selector: '[appPhone]',
   providers:[
     {
       provide: NG_VALIDATORS,
-      useExisting: VATDirective,
+      useExisting: PhoneValidatorDirective,
       multi: true
     }
   ]
 })
-export class VATDirective implements Validator{
+export class PhoneValidatorDirective implements Validator{
 
-  // @Input('appVat') VatNum: string | undefined;
+  
 constructor(){}
  
   validate(control: AbstractControl): ValidationErrors | null {
   
-      const re=/BG\d{9}/g;
+      const re=/(\+359)?0?\s?8\d{1}\s?\d{3}\s?\d{4}/gm;
       var flag=re.test(control.value);
          if(flag==true) {return null}
         
-    return { vatNum: true}
+    return { phone: true}
     
   }
-
-
-
-
 
 }

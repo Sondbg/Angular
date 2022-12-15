@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/api.service';
 
 
 export class HeaderComponent {
-user=false;
+cookieUser= sessionStorage.getItem('userAQT');
+
 
 }

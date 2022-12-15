@@ -1,6 +1,8 @@
 export interface Company{
-name: string;
-vat:string;
-phone:string;
-email:string;
+    company: string,
+    email: string,
+    phone: string,
+    password:string,
+    address:string,
+    vatReg:string
 }

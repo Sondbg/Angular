@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LogoutComponent } from './auth/logout/logout/logout.component';
+import { ProfileComponent } from './auth/profile/profile/profile.component';
 
 
 
@@ -16,6 +18,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   declarations: [
     AppComponent,
     LoginComponent,
+    LogoutComponent,
+    ProfileComponent,
    
   ],
   imports: [
