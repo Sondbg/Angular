@@ -42,7 +42,7 @@ let companyInfo:Company={
 this.apiService.createCompany(companyInfo).subscribe((value)=>{
   // value=JSON.parse(value)
 console.log(value.internalID);
-  if(typeof value.internalID==='number'){
+  if(value.ок===true){
     sessionStorage.setItem('userAQT',JSON.stringify(value.internalID));
     return window.location.reload()
   }
