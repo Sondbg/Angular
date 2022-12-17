@@ -18,7 +18,7 @@ constructor(){}
  
   validate(control: AbstractControl): ValidationErrors | null {
   
-      const re=/BG\d{9}/g;
+      const re=/BG\d{9}$/g;
       var flag=re.test(control.value);
          if(flag==true) {return null}
         

@@ -17,6 +17,12 @@
             <p class='error'  *ngIf="emailInput.errors?.['email']">Email is invalid</p>
           </ng-container>
 
+          <!-- if custom errors -->
+          <ng-container *ngIf="errors">
+            <p class='error'>{{errors}}</p>
+          </ng-container>
+
+
           <label for="password">Парола<sup class="star">&#x2605;</sup></label>
           <input #passwordInput="ngModel" type="password" name="password" placeholder="Password" required ngModel [minlength]="8">
           <ng-container *ngIf="passwordInput.touched">

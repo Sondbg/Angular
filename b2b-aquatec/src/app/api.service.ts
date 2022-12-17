@@ -23,10 +23,17 @@ let payload=createPayload('createCustomer',info)
   
 }
 
-getItems(){
+getItems(email:string, password:string){
+let payload=createPayload('checkCustomer',{email, password});
 
 
-  return this.httpClient.get(apiURL)
+  return this.httpClient.post<any>(apiURL,payload)
+}
+
+checkCustomerById(info:any){
+  let payload=createPayload('checkCustomerById',info);
+
+return this.httpClient.post<any>(apiURL,payload);
 }
 
 
@@ -34,9 +41,7 @@ getItems(){
 
 function createPayload(method:string,data:any){
 
-  return JSON.stringify({method:method,
-  data: data
-  })
+  return JSON.stringify({method:method,data: data})
   }
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, KeyValueDiffers, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   
 showLogin=true;
+errors='';
   swapForms(event:any){
     event.preventDefault();
 
@@ -41,8 +42,8 @@ let companyInfo:Company={
 
 this.apiService.createCompany(companyInfo).subscribe((value)=>{
   // value=JSON.parse(value)
-console.log(value.internalID);
-  if(value.ок===true){
+console.log(value);
+  if(value.ok===true){
     sessionStorage.setItem('userAQT',JSON.stringify(value.internalID));
     return window.location.reload()
   }
@@ -53,8 +54,16 @@ console.log(value.internalID);
   loginSubmit(form: NgForm){
     if(form.invalid){return}
     console.log(form.value)
-    this.apiService.getItems().subscribe((value)=>{
+    this.apiService.getItems(form.value.email,form.value.password).subscribe((value)=>{
       console.log(value)
+    if(value.status===200){
+      sessionStorage.setItem('userAQT',JSON.stringify(value.internalID));  
+      return window.location.reload()
+    }else if(value.status===204){
+this.errors='Wrong email or password!'
+    }else{
+      this.errors='Server error \n '+value
+    }
     })
       }
 }

@@ -4,5 +4,5 @@ export interface Company{
     phone: string,
     password:string,
     address:string,
-    vatReg:string
+    vatReg:string,
 }
