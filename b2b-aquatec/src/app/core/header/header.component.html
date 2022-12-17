@@ -1,6 +1,7 @@
     
     <!-- BEGIN branding -->
     <header id="branding" role="banner">
+       
                         <a  id="logo" href="/" title="&quot;Акватек&quot; – цялостно решение за басейни">
  <img src="../../../assets/stationaryJPG/LOGOAQUATECSINCE1994-2.jpg" alt="&quot;Акватек&quot; – цялостно решение за басейни" id="desktop-logo">
      </a>
@@ -10,17 +11,18 @@
 
                             <ul id="menu-corporate-navigation">
                                 <li><a class="highlight" href="/catalog">Каталог</a></li>
-    <li><a  class="highlight" [routerLink]="'auth/about-us'">За нас</a></li>
+    <li><a  class="highlight" [routerLink]="'/about-us'">За нас</a></li>
 
 </ul>
 
 </nav>
 <img src="../../../assets/stationaryJPG/green-call-icon-32x32.png">
    <strong>+359 885 111 503</strong>
-<ng-container *ngIf="!cookieUser; else noUser">
+   
+<ng-container *ngIf="!isLoggedIn; else noUser">
     <a class="highlight" id="login" [routerLink]="'auth/login'" title="Моят профил">
 
-        <span>
+        <span> 
           <strong>  Влез / Регистрирай се	</strong>		</span>
     </a>
 
@@ -38,8 +40,9 @@
         <span class="logout">
           <strong>  Изход	</strong>		</span>
     </a>
+   
 </ng-template>
-
+{{$time | async | date : 'HH:mm:ss'}}
 
     </header>
 

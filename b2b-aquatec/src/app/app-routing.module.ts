@@ -5,6 +5,11 @@ import { LoginComponent } from './auth/login/login.component';
 import { LogoutComponent } from './auth/logout/logout/logout.component';
 import { ProfileComponent } from './auth/profile/profile/profile.component';
 import { PageNotFoundComponent } from './core/pageNotFound/page-not-found/page-not-found.component';
+import { CatalogComponent } from './catalog/catalog/catalog.component';
+import { AboutUsComponent } from './static/about-us/about-us.component';
+import { ItemComponent } from './catalog/item/item/item.component';
+
+
 
 
 const routes: Routes = [{
@@ -41,6 +46,29 @@ const routes: Routes = [{
   loginGuard:true
 }
 },
+{
+  path:'catalog',
+  component: CatalogComponent,
+  data:{title: 'Catalog Page',
+}
+},
+{
+  path:'about-us',
+  component: AboutUsComponent,
+  data:{title: 'Catalog Page',
+}
+},
+{
+  path:'catalog',
+  children:[{
+path:'detail/:id',
+component:ItemComponent
+ } ],
+  canActivate: [AuthActivate],
+  data:{title:'Item',
+ 
+ }
+ },
 {
  path:'**',
  component:PageNotFoundComponent,

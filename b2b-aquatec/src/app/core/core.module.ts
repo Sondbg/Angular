@@ -20,7 +20,8 @@ import { PageNotFoundComponent } from './pageNotFound/page-not-found/page-not-fo
   ],
   exports:[
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PageNotFoundComponent,
   ]
 })
 export class CoreModule { }

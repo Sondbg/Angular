@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { interval, map } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 
 @Component({
@@ -11,7 +13,17 @@ import { ApiService } from 'src/app/api.service';
 
 
 export class HeaderComponent {
-cookieUser= sessionStorage.getItem('userAQT');
+  
+  get isLoggedIn() {
+    return this.authService.isLoggedIn
+  }
+// cookieUser= sessionStorage.getItem('userAQT');
+$time=interval(1000).pipe(
+  map(()=>new Date())
+)
+constructor(private authService:AuthService){}
+
+
 
 
 }

@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LogoutComponent } from './auth/logout/logout/logout.component';
 import { ProfileComponent } from './auth/profile/profile/profile.component';
+import { ItemsModule } from './catalog/items.module';
+
+
 
 
 
@@ -20,7 +23,7 @@ import { ProfileComponent } from './auth/profile/profile/profile.component';
     LoginComponent,
     LogoutComponent,
     ProfileComponent,
-   
+  
   ],
   imports: [
     BrowserModule, 
@@ -29,6 +32,7 @@ import { ProfileComponent } from './auth/profile/profile/profile.component';
     FormsModule,
      AppRoutingModule,
     HttpClientModule,
+   ItemsModule,
 
 
   ],

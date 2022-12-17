@@ -37,6 +37,18 @@ return this.httpClient.post<any>(apiURL,payload);
 }
 
 
+getAllItems(id:string){
+  let payload=createPayload('getMyItemPrices',id);
+
+  return this.httpClient.post<any>(apiURL,payload)
+}
+
+getItemBySku(company:string | null,sku:string){
+  let payload=createPayload('getItemPrice',{company, sku});
+
+  return this.httpClient.post<any>(apiURL,payload) 
+}
+
 }
 
 function createPayload(method:string,data:any){

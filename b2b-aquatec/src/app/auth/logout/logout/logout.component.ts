@@ -8,12 +8,9 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent {
 constructor( private router: Router){
-
+  sessionStorage.removeItem('userAQT');
+this.router.navigate(['/auth/login'])
 }
 
-  ngOnInit(){
-    sessionStorage.removeItem('userAQT');
-window.location.reload()
-  }
 
 }
