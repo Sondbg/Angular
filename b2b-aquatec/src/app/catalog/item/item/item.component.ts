@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { AuthService } from 'src/app/auth/auth.service';
+import { CartServiceService } from 'src/app/cart/cart-service.service';
 import { ItemDetail } from 'src/app/interfaces/itemDetails';
+
+
 
 @Component({
   selector: 'app-item',
@@ -15,7 +19,7 @@ export class ItemComponent implements OnInit{
 user:string | null=null;
 errorData=false;
 
-constructor(private apiService:ApiService,private authService:AuthService,private router: Router,private activeRouter:ActivatedRoute){
+constructor(private cartService: CartServiceService,private apiService:ApiService,private authService:AuthService,private router: Router,private activeRouter:ActivatedRoute){
 
 }
 
@@ -37,5 +41,17 @@ ngOnInit(): void {
     })
 }); 
 }
+
+addToCart(product:any,form: NgForm){
+  if(form.invalid)return
+  console.log(form)
+ if(!this.cartService.alreadyInCart(product)){
+product.quantity=form.value.quantity;
+this.cartService.addProduct(product);
+
+console.log(product)
+ }
+}
+
 
 }

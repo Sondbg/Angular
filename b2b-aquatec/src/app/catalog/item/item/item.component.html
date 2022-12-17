@@ -28,8 +28,17 @@
   
 
          <div class="product-price" *ngIf="this.user; else noUser">
-            <h1>{{item.price}} лв.</h1>
-            <a href="#" class="cart-btn">Добави в количката</a>
+            <form #addToCartForm="ngForm" (submit)="addToCart(item,addToCartForm)">
+                <div class="qtyLine">
+                <label for="quantity"><h3>Количество:</h3></label>
+                <input #quantityItem="ngModel" type="number" id="quantity" name="quantity" min="1" max="99" value="1" class="qty" required ngModel>
+            </div>
+            <p class='error' *ngIf="quantityItem.errors?.['required']">Моля изберете количество!</p>
+                <h1>{{item.price}} лв.</h1>
+                <button type="submit"  class="cart-btn">Добави в количката</button>
+            
+              </form>
+
           </div>
           <ng-template #noUser>
             <h1>Нужна е регистрация за достъп до цените!</h1>

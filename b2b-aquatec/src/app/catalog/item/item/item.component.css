@@ -4,14 +4,19 @@ html, body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
   }
-   
+  .qty{
+    opacity: 1;
+  } 
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 15px;
     display: flex;
   }
-
+.qtyLine{
+    display: inline-flex;
+    align-items: baseline;
+}
   .left-column {
     margin:auto;
     text-align: center;
@@ -176,11 +181,5 @@ html, body {
       right: 0;
       top: -65px;
       left: initial;
-    }
-  }
-   
-  @media (max-width: 535px) {
-    .left-column img {
-   
     }
   }

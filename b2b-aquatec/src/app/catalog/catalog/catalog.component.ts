@@ -48,6 +48,7 @@ ngOnInit(){
   console.log(this.itemsList)
 }
 
+
 filterPumps(){
 this.filterPump=!this.filterPump;
 this.filterFilter=!this.filterPump
@@ -79,4 +80,7 @@ filterFilters(){
 });
 }
 }
+
+
+
 }
