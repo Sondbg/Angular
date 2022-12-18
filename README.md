@@ -1,10 +1,10 @@
 # B2bAquatec
 
-This repository includes 2 parts:
+This project includes 2 parts:
 
 `B2bAquatec` - ecommerce platform, build with Angular. Where the prices are personalized based on the Customer Category in the Aquatec system.
 
-`Netsuite-Angular API` - custom made API, based on SuiteScript 2.x , to process and validate the data coming thru http.
+`Netsuite-Angular API` - custom made API, based on SuiteScript 2.x , to process and validate the data coming thru http. You can find it here <a href="https://github.com/Sondbg/Netsuite-Angular-API">Netsuite API Repository<a>
 
 ## Development server
 
