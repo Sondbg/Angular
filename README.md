@@ -62,7 +62,9 @@ GET
 Currently the user data is stored in the SessionStorage.
 The personal cart data is stored in LocalStorage.
 
+## Profile
 
+The Profile page reads live data from the backend and provides your unique ID number and a list of your last orders.
+ 
 ## In development
 In progress of adding filters to the catalog page
-The Cart page is not currently sending data to Netsuite
