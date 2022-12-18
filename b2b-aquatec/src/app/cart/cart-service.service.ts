@@ -22,10 +22,12 @@ this.saveCart();
 }
 
 loadCart(){
- this.personalCart =JSON.parse(localStorage.getItem('cart_item') as any) || []
+return this.personalCart =JSON.parse(localStorage.getItem('cart_item') as any) || []
 }
 
 alreadyInCart(product:any){
+  this.loadCart()
+
   return this.personalCart.findIndex((c:any)=> c.sku==product.sku)!=-1;
 }
 
