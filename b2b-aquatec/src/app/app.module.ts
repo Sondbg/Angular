@@ -12,11 +12,7 @@ import { ProfileComponent } from './auth/profile/profile/profile.component';
 import { ItemsModule } from './catalog/items.module';
 import { CartComponent } from './cart/cart/cart.component';
 import { HomeComponent } from './home/home/home.component';
-
-
-
-
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 
 @NgModule({
@@ -37,6 +33,7 @@ import { HomeComponent } from './home/home/home.component';
      AppRoutingModule,
     HttpClientModule,
    ItemsModule,
+   BrowserAnimationsModule
 
 
   ],

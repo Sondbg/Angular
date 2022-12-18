@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loader.component.css']
 })
 export class LoaderComponent implements OnInit{
+  state: string='default';
 
   constructor(){}
   ngOnInit(): void {
-    
+    this.state = (this.state === 'default' ? 'rotated' : 'default');
+
   }
 }

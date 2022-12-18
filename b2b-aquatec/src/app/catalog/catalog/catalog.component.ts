@@ -20,7 +20,7 @@ export class CatalogComponent implements OnInit{
   get isLoggedIn() {
     return this.authService.isLoggedIn
   }
-
+loader:boolean | null=true;
  itemsList: Array<any>=[];
 errorData=false;
 filterPump=false;
@@ -36,7 +36,7 @@ ngOnInit(){
 });
   this.apiService.getAllItems(company).subscribe({
     next:(value)=>{
-      
+      this.loader=null;
       this.itemsList=value.itemsArr
     },
     error:(err)=>{

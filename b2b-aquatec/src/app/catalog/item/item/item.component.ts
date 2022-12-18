@@ -19,6 +19,8 @@ export class ItemComponent implements OnInit{
 user:string | null=null;
 errorData=false;
 alreadyInCart:boolean | null=null;
+loader:boolean | null=true;
+
 
 constructor(private cartService: CartServiceService,private apiService:ApiService,private authService:AuthService,private router: Router,private activeRouter:ActivatedRoute){
 
@@ -35,7 +37,7 @@ ngOnInit(): void {
       
         this.item=value.item
         this.alreadyInCart=this.cartService.alreadyInCart(value.item);
-
+this.loader=null;
       },
       error:(err)=>{
         this.errorData=true;
