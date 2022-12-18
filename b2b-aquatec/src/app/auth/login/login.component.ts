@@ -12,6 +12,9 @@ import { HeaderComponent } from 'src/app/core/header/header.component';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  loader:boolean | null = null;
+
   constructor(private apiService:ApiService, private authService:AuthService, private router:Router, private activatedRoute: ActivatedRoute){
 
     
@@ -41,13 +44,15 @@ let companyInfo:Company={
   address:form.value.address,
   vatReg:form.value.vatReg
 };
-
+this.loader=true;
 this.apiService.createCompany(companyInfo).subscribe((value)=>{
   // value=JSON.parse(value)
 console.log(value);
   if(value.ok===true){
     sessionStorage.setItem('userAQT',JSON.stringify(value.internalID));
     return window.location.reload()
+  }else{
+    this.loader=null;
   }
   return value
 })
@@ -56,6 +61,7 @@ console.log(value);
   loginSubmit(form: NgForm){
     if(form.invalid){return}
     console.log(form.value)
+    this.loader=true;
     this.apiService.getItems(form.value.email,form.value.password).subscribe((value)=>{
       console.log(value)
     if(value.status===200){
@@ -65,7 +71,9 @@ console.log(value);
 this.errors='Wrong email or password!'
     }else{
       this.errors='Internal server error'
+
     }
+    this.loader=null;
     })
       }
 }

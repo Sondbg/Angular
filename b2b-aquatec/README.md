@@ -62,6 +62,10 @@ GET
 Currently the user data is stored in the SessionStorage.
 The personal cart data is stored in LocalStorage.
 
+## Animation
+
+Animation was added on the main page, when you click the text headers
+
 
 ## In development
 In progress of adding filters to the catalog page

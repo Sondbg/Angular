@@ -1,9 +1,10 @@
-
-<div class="shopping-cart">
+<app-loader *ngIf="this.loader"></app-loader>
+<div class="shopping-cart" *ngIf="!this.loader">
 <h1><p>КОЛИЧКА</p></h1>
 
+<div *ngIf="this.products.length==0"><h1>Количката ви е празна!</h1> </div>
 
-<div clas="container">
+<div clas="container" *ngIf="this.products.length!=0">
 <table class="items">
     <tr>
     <td>Снимка</td>
@@ -27,7 +28,7 @@
     {{item.description}}
  </td>
  <td class="qty">
-<input #inputQty="ngModel" type="number" min="1" max="99" [(ngModel)]="defaultQty" ngModel={{i}}>
+<input  ngModel #inputQty="ngModel" type="number" min="1" max="99"  (change)="changeQty($event,item)">
 
  </td>
  <td class="unitPrice">
@@ -61,7 +62,7 @@
     <td>{{this.total | number:'1.1'}} лв.</td>
 </tr>
 <tr>
-    <td colspan="2">  <button class="checkout">Завърши поръчка</button>
+    <td colspan="2">  <button (click)="submitMyOrder()" class="checkout">Завърши поръчка</button>
     </td>
     </tr>
 </table>

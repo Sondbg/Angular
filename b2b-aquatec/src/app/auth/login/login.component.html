@@ -1,4 +1,6 @@
-<div class="container">
+<app-loader *ngIf="this.loader"></app-loader>
+
+<div class="container" *ngIf="!this.loader">
 
     
     <!-- LOGIN FORM-->

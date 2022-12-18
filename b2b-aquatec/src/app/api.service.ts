@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Company } from './interfaces/company';
+import { AuthService } from './auth/auth.service';
 
 
 
@@ -13,7 +14,7 @@ const apiURL=environment.apiURL;
 })
 export class ApiService {
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private authService: AuthService) {}
 
 createCompany(info:any):Observable<any>{
 let payload=createPayload('createCustomer',info)
@@ -49,7 +50,15 @@ getItemBySku(company:string | null,sku:string){
   return this.httpClient.post<any>(apiURL,payload) 
 }
 
+createSO(products:any){
+let company=JSON.parse(this.authService.userSession);
+if(!company)return
+let payload=createPayload('createSO',{company,products});
+
+return this.httpClient.post<any>(apiURL,payload) 
 }
+}
+
 
 function createPayload(method:string,data:any){
 
