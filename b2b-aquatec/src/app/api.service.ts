@@ -57,6 +57,15 @@ let payload=createPayload('createSO',{company,products});
 
 return this.httpClient.post<any>(apiURL,payload) 
 }
+
+getMySO(){
+  let company=JSON.parse(this.authService.userSession);
+if(!company)return
+let payload=createPayload('getMySo',{company});
+
+return this.httpClient.post<any>(apiURL,payload) 
+}
+
 }
 
 

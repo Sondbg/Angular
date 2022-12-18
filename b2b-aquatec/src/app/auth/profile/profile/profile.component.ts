@@ -9,6 +9,8 @@ import { AuthService } from '../../auth.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit{
+orders:any[]=[];
+
   constructor(private apiService:ApiService, private authService:AuthService){
 
   }
@@ -25,7 +27,7 @@ address:''
   ngOnInit(): void {
   var id=sessionStorage.getItem('userAQT');
 var company=id? JSON.parse(id):{};
-
+console.log(this.orders)
 
   this.apiService.checkCustomerById(company).subscribe((value)=>{
     console.log(value)
@@ -39,7 +41,12 @@ var company=id? JSON.parse(id):{};
     }
   
   });
-  console.log(this.companyInfo)
+ 
+this.apiService.getMySO()?.subscribe((value)=>{
+  this.orders=value.order;
+  console.log(this.orders)
+})
+
   }
 
 }

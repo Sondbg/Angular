@@ -36,6 +36,24 @@
                   <td>{{companyInfo.address}}</td>
 
               </table>
+<h1>Последни поръчки:</h1>
+              <table class="order" *ngIf="orders.length!=0">
+            
+                <tr><th> Поръчка дата:</th>
+                  <th>Стойност:</th>
+                </tr>
+               <ng-container *ngFor="let order of this.orders; let i=index">
+                <tr><td>
+                  {{order.date}}
+                </td>
+                <td>
+                  {{order.amount}} лв.
+                </td>
+
+                </tr>
+              </ng-container>        
+              </table>
+              <div *ngIf="orders.length==0"><h2>Нямате предишни поръчки</h2></div>
             </div>
           </div>
             <div style="height: 26px"></div>
