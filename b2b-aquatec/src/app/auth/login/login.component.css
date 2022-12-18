@@ -101,6 +101,7 @@ label{
             color:red;
             }
             .container{
+                justify-content: center;
                 display:flex;
                 flex-wrap:wrap;
                 max-width: 100%;

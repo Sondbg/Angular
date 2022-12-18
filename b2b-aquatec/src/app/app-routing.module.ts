@@ -8,6 +8,8 @@ import { PageNotFoundComponent } from './core/pageNotFound/page-not-found/page-n
 import { CatalogComponent } from './catalog/catalog/catalog.component';
 import { AboutUsComponent } from './static/about-us/about-us.component';
 import { ItemComponent } from './catalog/item/item/item.component';
+import { CartComponent } from './cart/cart/cart.component';
+import { HomeComponent } from './home/home/home.component';
 
 
 
@@ -15,6 +17,7 @@ import { ItemComponent } from './catalog/item/item/item.component';
 const routes: Routes = [{
   path:'',
   pathMatch:'full',
+  component:HomeComponent,
   canActivate: [AuthActivate],
   redirectTo:'',
   data:{ title:'Aquatec',
@@ -43,6 +46,14 @@ const routes: Routes = [{
   component: LogoutComponent,
   canActivate: [AuthActivate],
   data:{title: 'My profile',
+  loginGuard:true
+}
+},
+{
+  path:'cart',
+  component: CartComponent,
+  canActivate: [AuthActivate],
+  data:{title: 'My cart',
   loginGuard:true
 }
 },

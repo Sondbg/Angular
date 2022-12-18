@@ -31,12 +31,17 @@
             <form #addToCartForm="ngForm" (submit)="addToCart(item,addToCartForm)">
                 <div class="qtyLine">
                 <label for="quantity"><h3>Количество:</h3></label>
-                <input #quantityItem="ngModel" type="number" id="quantity" name="quantity" min="1" max="99" value="1" class="qty" required ngModel>
+           
             </div>
-            <p class='error' *ngIf="quantityItem.errors?.['required']">Моля изберете количество!</p>
+     
                 <h1>{{item.price}} лв.</h1>
+                <ng-container *ngIf="!this.alreadyInCart">
                 <button type="submit"  class="cart-btn">Добави в количката</button>
-            
+              </ng-container>
+
+              <ng-container *ngIf="this.alreadyInCart">
+                <p> Артикулът вече е в количката Ви!</p>
+              </ng-container>
               </form>
 
           </div>

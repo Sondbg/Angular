@@ -18,6 +18,7 @@ export class ItemComponent implements OnInit{
   item:ItemDetail | null=null;
 user:string | null=null;
 errorData=false;
+alreadyInCart:boolean | null=null;
 
 constructor(private cartService: CartServiceService,private apiService:ApiService,private authService:AuthService,private router: Router,private activeRouter:ActivatedRoute){
 
@@ -33,6 +34,8 @@ ngOnInit(): void {
       next:(value)=>{
       
         this.item=value.item
+        this.alreadyInCart=this.cartService.alreadyInCart(value.item);
+
       },
       error:(err)=>{
         this.errorData=true;
@@ -40,6 +43,9 @@ ngOnInit(): void {
       }
     })
 }); 
+
+
+
 }
 
 addToCart(product:any,form: NgForm){
@@ -48,8 +54,8 @@ addToCart(product:any,form: NgForm){
  if(!this.cartService.alreadyInCart(product)){
 product.quantity=form.value.quantity;
 this.cartService.addProduct(product);
+this.alreadyInCart=true;
 
-console.log(product)
  }
 }
 

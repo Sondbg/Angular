@@ -52,3 +52,13 @@ header{
 #login{
   padding-right: 35px;
 }
+
+.mini-cart img{
+  width:30px;
+  height:30px;
+ 
+ }
+ .dd-text {
+ text-transform: none;
+ padding-left: 0
+ }

@@ -1,6 +1,10 @@
 # B2bAquatec
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+This repository includes 2 parts:
+
+B2bAquatec - ecommerce platform, where the prices are personalized based on the Customer Category in the Aquatec system.
+
+Netsuite-Angular API - the custom made API on Netsuite's side , to process and validate the data coming thru http.
 
 ## Development server
 

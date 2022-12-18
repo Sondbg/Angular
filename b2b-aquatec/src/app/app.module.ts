@@ -10,6 +10,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LogoutComponent } from './auth/logout/logout/logout.component';
 import { ProfileComponent } from './auth/profile/profile/profile.component';
 import { ItemsModule } from './catalog/items.module';
+import { CartComponent } from './cart/cart/cart.component';
+import { HomeComponent } from './home/home/home.component';
 
 
 
@@ -23,6 +25,8 @@ import { ItemsModule } from './catalog/items.module';
     LoginComponent,
     LogoutComponent,
     ProfileComponent,
+    CartComponent,
+    HomeComponent,
   
   ],
   imports: [

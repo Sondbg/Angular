@@ -5,7 +5,8 @@
                         <a  id="logo" href="/" title="&quot;Акватек&quot; – цялостно решение за басейни">
  <img src="../../../assets/stationaryJPG/LOGOAQUATECSINCE1994-2.jpg" alt="&quot;Акватек&quot; – цялостно решение за басейни" id="desktop-logo">
      </a>
-
+     <img src="../../../assets/stationaryJPG/green-call-icon-32x32.png">
+     <li>  <strong>+359 885 111 503</strong></li>
      <!-- BEGIN nav-menu -->
 <nav id="nav-menu" role="navigation">
 
@@ -13,11 +14,7 @@
                                 <li><a class="highlight" href="/catalog">Каталог</a></li>
     <li><a  class="highlight" [routerLink]="'/about-us'">За нас</a></li>
 
-</ul>
 
-</nav>
-<img src="../../../assets/stationaryJPG/green-call-icon-32x32.png">
-   <strong>+359 885 111 503</strong>
    
 <ng-container *ngIf="!isLoggedIn; else noUser">
     <a class="highlight" id="login" [routerLink]="'auth/login'" title="Моят профил">
@@ -28,11 +25,18 @@
 
 </ng-container>
 <ng-template #noUser>
-
+    <li class="mini-cart" >
+        <a class="dropdown-toggle cart-dropdown" data-bs-toggle="dropdown" id="cartMenuLink" [routerLink]="'/cart'" aria-expanded="false">
+            <img src="../../../assets/stationaryJPG/img_521148-3376030873.png">
+         
+            <span class="dd-text">Количка<span class="caret"></span></span>
+        </a>
+    
+    </li>
     <a class="highlight" [routerLink]="'auth/profile'" title="Моят профил">
 
         <span class="profile">
-          <strong>  Моят профил	</strong>		</span>
+ <li>        <strong>  Моят профил	</strong></li> </span>
     </a>
 
     <a class="highlight" [routerLink]="'auth/logout'" title="изход">
@@ -44,5 +48,8 @@
 </ng-template>
 {{$time | async | date : 'HH:mm:ss'}}
 
+</ul>
+
+</nav>
     </header>
 
