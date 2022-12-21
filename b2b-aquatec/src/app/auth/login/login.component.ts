@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { Company } from 'src/app/interfaces';
 import { AuthService } from '../auth.service';
-import { HeaderComponent } from 'src/app/core/header/header.component';
+
 
 @Component({
   selector: 'app-login',

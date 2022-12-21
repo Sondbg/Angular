@@ -1,42 +1,37 @@
     
     <!-- BEGIN branding -->
     <header id="branding" role="banner">
-       
+       <div class="logo">
                         <a  id="logo" href="/" title="&quot;Акватек&quot; – цялостно решение за басейни">
  <img src="../../../assets/stationaryJPG/LOGOAQUATECSINCE1994-2.jpg" alt="&quot;Акватек&quot; – цялостно решение за басейни" id="desktop-logo">
      </a>
-     <img src="../../../assets/stationaryJPG/green-call-icon-32x32.png">
-     <li>  <strong>+359 885 111 503</strong></li>
+    </div>
      <!-- BEGIN nav-menu -->
 <nav id="nav-menu" role="navigation">
-
-                            <ul id="menu-corporate-navigation">
-                                <li><a class="highlight" href="/catalog">Каталог</a></li>
-    <li><a  class="highlight" [routerLink]="'/about-us'">За нас</a></li>
+<ul>
+                            
+                     <li>           <a class="highlight" href="/catalog">Каталог</a></li>
+   <li> <a  class="highlight" [routerLink]="'/about-us'">За нас</a></li>
 
 
    
 <ng-container *ngIf="!isLoggedIn; else noUser">
-    <a class="highlight" id="login" [routerLink]="'auth/login'" title="Моят профил">
+  <li>  <a class="highlight" id="login" [routerLink]="'auth/login'" title="Моят профил">
 
-        <span> 
-          <strong>  Влез / Регистрирай се	</strong>		</span>
+     
+        <strong>  Влез / Регистрирай се	</strong>	
     </a>
-
+</li>
 </ng-container>
 <ng-template #noUser>
-    <li class="mini-cart" >
-        <a class="dropdown-toggle cart-dropdown" data-bs-toggle="dropdown" id="cartMenuLink" [routerLink]="'/cart'" aria-expanded="false">
-            <img src="../../../assets/stationaryJPG/img_521148-3376030873.png">
-         
-            <span class="dd-text">Количка<span class="caret"></span></span>
-        </a>
     
-    </li>
+  
+    
+ 
     <a class="highlight" [routerLink]="'auth/profile'" title="Моят профил">
 
         <span class="profile">
- <li>        <strong>  Моят профил	</strong></li> </span>
+        <strong>  Моят профил	</strong> </span>
     </a>
 
     <a class="highlight" [routerLink]="'auth/logout'" title="изход">
@@ -44,12 +39,21 @@
         <span class="logout">
           <strong>  Изход	</strong>		</span>
     </a>
-   
+    <a class="cart" data-bs-toggle="dropdown" id="cartMenuLink" [routerLink]="'/cart'" aria-expanded="false">
+        <img src="../../../assets/stationaryJPG/img_521148-3376030873.png">
+     
+        <span class="dd-text">Количка<span class="caret"></span></span>
+    </a>
 </ng-template>
-{{$time | async | date : 'HH:mm:ss'}}
-
 </ul>
 
+
 </nav>
+
+<div class="float-right">  <img src="../../../assets/stationaryJPG/green-call-icon-32x32.png">
+    <strong>+359 885 111 503</strong>
+    
+<span class="timer">{{$time | async | date : 'HH:mm:ss'}}</span>
+ </div>
     </header>
 

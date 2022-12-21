@@ -2,15 +2,15 @@
 <div class="container">
     <table>
 <tr>
-    <h1 (click)="rotate()">Добре дошли в нашият сайт. </h1>
+    <h1 (click)="rotate()" [@loadFade]="this.visible">Добре дошли в нашият сайт. </h1>
 </tr>
 <tr>
 
-    <h2 (click)="rotate()"> За да достъпите цените ще ви е нужен акаунт.</h2>
+    <h2 (click)="rotate()"  [@loadFade]="this.visible"> За да достъпите цените ще ви е нужен акаунт.</h2>
 </tr>
 
 <tr>
-    <button [routerLink]="'auth/login'">Създаване на Акаунт</button>
+    <button [routerLink]="'auth/login'"  [@loadFade]="this.visible">Създаване на Акаунт</button>
 </tr>
     </table>
 
