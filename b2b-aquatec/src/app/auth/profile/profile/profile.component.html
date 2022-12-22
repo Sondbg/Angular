@@ -46,11 +46,21 @@
 <h1>Последни поръчки:</h1>
               <table class="order" *ngIf="orders">
             
-                <tr><th> Поръчка дата:</th>
+                <tr>
+                  <th>Номер Поръчка:</th>
+                  <th>Идент. Номер:</th>
+                  <th> Поръчка дата:</th>
                   <th>Стойност:</th>
                 </tr>
                <ng-container *ngFor="let order of this.orders; let i=index">
-                <tr><td>
+                <tr>
+                  <td>
+{{order.tranID}}
+                  </td>
+                  <td>
+{{order.internalID}}
+                  </td>
+                  <td>
                   {{order.date}}
                 </td>
                 <td>

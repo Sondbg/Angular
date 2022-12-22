@@ -32,3 +32,6 @@ display: inline-block;
 .cart img {
   height:25px
 }
+.active-link{
+  background-color: rgba(6, 22, 163, 0.247);
+}

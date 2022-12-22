@@ -43,7 +43,8 @@ var company=id? JSON.parse(id):{};
   });
  
 this.apiService.getMySO()?.subscribe((value)=>{
-  this.orders=value.order;
+
+  this.orders=value.records;
   console.log(this.orders)
 })
 

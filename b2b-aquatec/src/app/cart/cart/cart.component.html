@@ -1,6 +1,14 @@
 <app-loader *ngIf="this.loader"></app-loader>
 <div class="shopping-cart" *ngIf="!this.loader">
-<h1><p>КОЛИЧКА</p></h1>
+
+<svg width=100% height="200">
+    <g transform="translate(100,100)">
+      <text id="TextElement" x="0" y="0" style="font-family:Verdana;font-size:24">КОЛИЧКА
+        <animateMotion  repeatCount="indefinite" path="M 0 0, l 900 0,Z" dur="5s" fill="freeze" />
+      </text>
+    </g>
+
+  </svg>
 
 <div *ngIf="this.products.length==0"><h1>Количката ви е празна!</h1> </div>
 
@@ -66,7 +74,7 @@
     </td>
     </tr>
 </table>
-       
+
 
     </div>
 

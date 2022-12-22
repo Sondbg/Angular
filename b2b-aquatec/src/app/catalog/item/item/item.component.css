@@ -24,7 +24,11 @@ html, body {
     width: 65%;
     position: relative;
   }
-   
+   .item-img:hover{
+
+      transform: scale(1.5);
+
+   }
   .right-column {
     width: 35%;
     margin-top: 60px;
