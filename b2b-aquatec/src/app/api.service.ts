@@ -40,6 +40,8 @@ return this.httpClient.post<any>(apiURL,payload);
 
 getAllItems(id:string){
   let payload=createPayload('getMyItemPrices',id);
+//catalog page load
+
 
   return this.httpClient.post<any>(apiURL,payload)
 }
