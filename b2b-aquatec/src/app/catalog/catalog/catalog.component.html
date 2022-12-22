@@ -1,15 +1,18 @@
-<ng-container *ngIf="loader">
-<app-loader></app-loader>
 
-</ng-container>
-
-
-<ng-container *ngIf="!loader">
 
   
 <div class="error" *ngIf="errorData">Error while loading the items</div>
 
 <div class="wrap">
+  <ng-container *ngIf="loader">
+    <app-loader></app-loader>
+    
+    </ng-container>
+    
+    
+    <ng-container *ngIf="!loader">
+
+
 <!-- <div class="sidebar">
     <h1>Филтри:</h1>
     <ul class="nav">
@@ -52,8 +55,7 @@
 
 </div>
 
-
+</ng-container>
 </div>
 
 
-</ng-container>

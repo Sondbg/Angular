@@ -1,20 +1,13 @@
-#loader {
-    bottom: 0;
-    height: 175px;
-    left: 0;
-    margin: auto;
+  .container{
+    height:80%;
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 175px;
   }
-  
   #loader {
     bottom: 0;
     height: 175px;
     left: 0;
     margin: auto;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     width: 175px;

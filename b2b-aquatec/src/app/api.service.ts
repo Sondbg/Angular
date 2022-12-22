@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { Company } from './interfaces/company';
 import { AuthService } from './auth/auth.service';
 
 
@@ -41,7 +40,6 @@ return this.httpClient.post<any>(apiURL,payload);
 getAllItems(id:string){
   let payload=createPayload('getMyItemPrices',id);
 //catalog page load
-
 
   return this.httpClient.post<any>(apiURL,payload)
 }

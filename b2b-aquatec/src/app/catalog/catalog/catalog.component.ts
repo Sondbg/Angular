@@ -36,6 +36,7 @@ ngOnInit(){
 });
   this.apiService.getAllItems(company).subscribe({
     next:(value)=>{
+      console.log('API respond / '+ value)
       this.loader=null;
       this.itemsList=value.itemsArr
     },

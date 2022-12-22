@@ -1,9 +1,16 @@
 <div class="profile" >
     <div class="container">
+      <ng-container *ngIf="loader">
+        <app-loader></app-loader>
+        
+        </ng-container>
+
+        <ng-container *ngIf="!loader">
       <div class="row">
         <div class="col-lg-4">
           <div class="card shadow-sm">
             <div class="card-header bg-transparent text-center">
+
               <img class="profile_img" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.newdesignfile.com%2Fpostpic%2F2009%2F11%2Fuser-icon_291700.jpg&f=1&nofb=1&ipt=467f80ffefc6e42fa981353a040a31682d6b09a7f541916e99f8dd52adccc840&ipo=imagesdent" >
               <h3>{{companyInfo.name}}</h3>
             </div>
@@ -37,7 +44,7 @@
 
               </table>
 <h1>Последни поръчки:</h1>
-              <table class="order" *ngIf="orders.length!=0">
+              <table class="order" *ngIf="orders">
             
                 <tr><th> Поръчка дата:</th>
                   <th>Стойност:</th>
@@ -53,12 +60,13 @@
                 </tr>
               </ng-container>        
               </table>
-              <div *ngIf="orders.length==0"><h2>Нямате предишни поръчки</h2></div>
+              <div *ngIf="!orders"><h2>Нямате предишни поръчки</h2></div>
             </div>
           </div>
             <div style="height: 26px"></div>
 
         </div>
       </div>
+    </ng-container>   
     </div>
   </div>

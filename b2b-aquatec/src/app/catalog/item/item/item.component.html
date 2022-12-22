@@ -1,20 +1,16 @@
-<ng-container *ngIf="loader">
-  <app-loader></app-loader>
-  
-  </ng-container>
+
   
 
 <div class="error" *ngIf="errorData">Error while loading the items</div>
-<ng-container *ngIf="this.item">
 
 
 
-
-<ng-container>
-
-</ng-container>
 <main class="container">
- 
+  <ng-container *ngIf="loader">
+    <app-loader></app-loader>
+    
+    </ng-container>
+  <ng-container *ngIf="this.item">
     <!-- Left Column / Headphones Image -->
     <div class="left-column">
       <img src={{item.imageUrl}} >
@@ -73,9 +69,10 @@
       <!-- Product Pricing -->
      
     </div>
+  </ng-container>
+
   </main>
 
 
-</ng-container>
 
 

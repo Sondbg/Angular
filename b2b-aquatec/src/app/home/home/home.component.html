@@ -1,18 +1,10 @@
-<img  src="../../../assets/stationaryJPG/home.jpg" [@rotatedState]='this.state'>
 <div class="container">
-    <table>
-<tr>
-    <h1 (click)="rotate()" [@loadFade]="this.visible">Добре дошли в нашият сайт. </h1>
-</tr>
-<tr>
+    <img src="../../../assets/stationaryJPG/home.jpg" style="width:100%;" [@rotatedState]='this.state'>
+    <div class="centered" (click)="rotate()"  [@loadFade]="this.visible">Добре дошли в нашият сайт.
+        <br>
+        За да достъпите цените ще ви е нужен акаунт.
+<br>
+        <button [routerLink]="'auth/login'"  [@loadFade]="this.visible">Създаване на Акаунт</button>
+    </div>
 
-    <h2 (click)="rotate()"  [@loadFade]="this.visible"> За да достъпите цените ще ви е нужен акаунт.</h2>
-</tr>
-
-<tr>
-    <button [routerLink]="'auth/login'"  [@loadFade]="this.visible">Създаване на Акаунт</button>
-</tr>
-    </table>
-
-
-</div>
+  </div>
