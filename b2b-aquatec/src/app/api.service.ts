@@ -40,11 +40,8 @@ return this.httpClient.post<any>(apiURL,payload);
 
 getAllItems(id:string){
   let payload=createPayload('getMyItemPrices',id);
-let headers= new HttpHeaders({
-  'Access-Control-Allow-Origin':'*'
-})
 
-  return this.httpClient.post<any>(apiURL,payload,{headers:headers})
+  return this.httpClient.post<any>(apiURL,payload)
 }
 
 getItemBySku(company:string | null,sku:string){
