@@ -1,4 +1,4 @@
-.lm-col-12, .lol-page-item{
+.lm-col-12{
     margin: auto;
     text-align: center;
     display: block;
@@ -7,7 +7,11 @@
   font-family: serif;
 
 }
+.about-us-container{
+background-color: rgba(127, 255, 212, 0.168);
+}
 strong, h2{
     font-weight: bold;
     color:black
 }
+

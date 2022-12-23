@@ -1,10 +1,10 @@
-<app-loader *ngIf="this.loader"></app-loader>
 
-<div class="container" *ngIf="!this.loader">
 
+<div class="container">
+  <app-loader *ngIf="this.loader"></app-loader>
     
     <!-- LOGIN FORM-->
-    <ng-container *ngIf="showLogin">
+    <ng-container *ngIf="showLogin && !this.loader">
     <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
       <div class="form-group">
         <div class="title">
@@ -107,7 +107,7 @@
           </form>
 
     </ng-container>
-      <div class="register"><h2><strong>
+      <div class="register" *ngIf="!this.loader"><h2><strong>
         <ng-container *ngIf="showLogin"> <h2> РЕГИСТРИРАЙ СЕ</h2>  </ng-container>
         <ng-container *ngIf="!showLogin"> <h2>  ВХОД </h2></ng-container>
     </strong></h2>
