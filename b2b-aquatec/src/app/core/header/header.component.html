@@ -30,19 +30,18 @@
         <span class="dd-text">Количка<span class="caret"></span></span>
     </a>
   
-    
- 
-    <a class="highlight" [routerLink]="'auth/profile'" routerLinkActive="active-link" title="Моят профил">
-
+    <div class="dropdown">
         <span class="profile">
-        <strong>  Моят профил	</strong> </span>
-    </a>
+            <strong>  Моят профил	</strong> </span>
+        <div class="dropdown-content">
+        <a class="highlight" [routerLink]="'auth/profile'" routerLinkActive="active-link" title="Моят профил">Информация</a>
+        <a class="highlight" [routerLink]="'auth/orders'" routerLinkActive="active-link" title="поръчки">Поръчки</a>
+        <a class="highlight" [routerLink]="'auth/logout'" routerLinkActive="active-link" title="изход">Изход</a>
+  
+        </div>
+      </div>
+ 
 
-    <a class="highlight" [routerLink]="'auth/logout'" routerLinkActive="active-link" title="изход">
-
-        <span class="logout">
-          <strong>  Изход	</strong>		</span>
-    </a>
    
 </ng-template>
 </ul>

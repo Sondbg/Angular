@@ -13,28 +13,27 @@ body {
     border: 10px solid #ccc;
     border-radius: 50%;
 }
-
+.pr-1{
+    font-size: 30px;
+}
 .profile .card h3 {
     font-size: 20px;
     font-weight: 700;
 }
 
 .profile .card p {
-    font-size: 16px;
+    font-size: 20px;
     color: #000;
 }
 
 .profile .table th,
 .profile .table td {
-
-    font-size: 17px;
-
     color: #000;
 }
 .profile{
 text-align: center;
 background: linear-gradient(#a2d5ee, #5c8060);
-
+height:80vh;
 margin: auto;
 font-size:30px;
 
@@ -60,10 +59,14 @@ table{
 }
 th{
     text-align: right;
+    font-size:25px;
 }
 td{
     text-align: left;
 }
 tr{
     text-align: center;
+}
+.personal-info{
+   height:50px
 }

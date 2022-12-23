@@ -10,6 +10,7 @@ import { AboutUsComponent } from './static/about-us/about-us.component';
 import { ItemComponent } from './catalog/item/item/item.component';
 import { CartComponent } from './cart/cart/cart.component';
 import { HomeComponent } from './home/home/home.component';
+import { OrdersComponent } from './auth/orders/orders.component';
 
 
 
@@ -46,6 +47,14 @@ const routes: Routes = [{
   component: LogoutComponent,
   canActivate: [AuthActivate],
   data:{title: 'My profile',
+  loginGuard:true
+}
+},
+{
+  path:'auth/orders',
+  component: OrdersComponent,
+  canActivate: [AuthActivate],
+  data:{title: 'My orders',
   loginGuard:true
 }
 },

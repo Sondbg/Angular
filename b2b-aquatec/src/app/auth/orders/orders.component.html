@@ -1,0 +1,39 @@
+<div class="my-orders">
+    <ng-container *ngIf="loader">
+        <app-loader></app-loader>
+        
+        </ng-container>
+
+
+
+        <ng-container *ngIf="!loader">
+<h1>Последни поръчки:</h1>
+              <table class="order" *ngIf="orders">
+            
+                <tr>
+                  <th>Номер Поръчка:</th>
+                  <th>Идент. Номер:</th>
+                  <th> Поръчка дата:</th>
+                  <th>Стойност:</th>
+                </tr>
+               <ng-container *ngFor="let order of this.orders; let i=index">
+                <tr>
+                  <td>
+{{order.tranID}}
+                  </td>
+                  <td>
+{{order.internalID}}
+                  </td>
+                  <td>
+                  {{order.date}}
+                </td>
+                <td>
+                  {{order.amount}} лв.
+                </td>
+
+                </tr>
+              </ng-container>        
+              </table>
+              <div *ngIf="!orders"><h2>Нямате предишни поръчки</h2></div>
+            </ng-container>
+            </div>
