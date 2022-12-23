@@ -23,12 +23,14 @@ border:1px solid;
         }
 label{
     text-align: left;
+    font-size: 25px;
 }
     .register{
         border-left: 1px solid gray ;
         text-align: center;
         padding:25px 40px;
         display: block;
+        font-size: 25px;
     }
     .register strong{
         font-size: 20px;
@@ -109,6 +111,8 @@ label{
                 margin-top: 45px;
                 margin-bottom: 45px;
                 text-align: center;
+                height:70vh;
+                
             }
 
     a{
