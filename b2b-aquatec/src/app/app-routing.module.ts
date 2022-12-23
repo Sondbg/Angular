@@ -26,6 +26,14 @@ const routes: Routes = [{
 }
 },
 {
+  path:'auth',
+  pathMatch:'full',
+  redirectTo:'auth/profile',
+  data:{ title:'Aquatec',
+
+}
+},
+{
   path:'auth/login',
   component:LoginComponent,
   canActivate: [AuthActivate],

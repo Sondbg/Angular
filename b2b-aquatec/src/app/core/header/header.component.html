@@ -9,7 +9,7 @@
      <!-- BEGIN nav-menu -->
 <nav id="nav-menu" role="navigation">
 <ul>
-                            
+    <li>           <a class="highlight" [routerLink]="'/'" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Начало</a></li>                    
                      <li>           <a class="highlight" [routerLink]="'/catalog'" routerLinkActive="active-link">Каталог</a></li>
    <li> <a  class="highlight" routerLinkActive="active-link" [routerLink]="'/about-us'">За нас</a></li>
 
@@ -32,7 +32,7 @@
   
     <div class="dropdown">
         <span class="profile">
-            <strong>  Моят профил	</strong> </span>
+            <strong [routerLink]="'auth'" routerLinkActive="active-link">  Моят профил	</strong> </span>
         <div class="dropdown-content">
         <a class="highlight" [routerLink]="'auth/profile'" routerLinkActive="active-link" title="Моят профил">Информация</a>
         <a class="highlight" [routerLink]="'auth/orders'" routerLinkActive="active-link" title="поръчки">Поръчки</a>
